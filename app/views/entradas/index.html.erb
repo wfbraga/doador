@@ -1,0 +1,37 @@
+<div class="page-header">
+  <%= link_to new_entrada_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    Nova Entrada
+  <% end %>
+  <h1>Lista de entradas</h1>
+</div>
+<div>
+<h3>Total atual: <%= number_to_currency(@total_entradas, unit: "R$", separator: ",") %></h3>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Data</th>
+            <th>Valor</th>
+            <th>Categoria</th>
+            <th>Descricao</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @entradas) do |entrada| %>
+            <td><%= entrada.data %></td>
+            <td><%= entrada.valor %></td>
+            <td><%= entrada.categoria %></td>
+            <td><%= entrada.descricao %></td>
+            <td><%= link_to 'Show', entrada %></td>
+        <td><%= link_to 'Edit', edit_entrada_path(entrada) %></td>
+        <td><%= link_to 'Destroy', entrada, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>

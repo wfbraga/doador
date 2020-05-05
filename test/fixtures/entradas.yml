@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2020-05-05
+  valor: 1.5
+  categoria: MyString
+  descricao: MyString
+
+two:
+  data: 2020-05-05
+  valor: 1.5
+  categoria: MyString
+  descricao: MyString

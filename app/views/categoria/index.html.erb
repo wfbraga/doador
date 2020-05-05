@@ -1,0 +1,29 @@
+<div class="page-header">
+  <%= link_to new_categorium_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    New Categorium
+  <% end %>
+  <h1>Listing categoria</h1>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+            <th>Nome</th>
+            <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= content_tag_for(:tr, @categoria) do |categorium| %>
+            <td><%= categorium.nome %></td>
+            <td><%= link_to 'Show', categorium %></td>
+        <td><%= link_to 'Edit', edit_categorium_path(categorium) %></td>
+        <td><%= link_to 'Destroy', categorium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
